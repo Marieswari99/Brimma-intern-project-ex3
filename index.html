@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date calculation</title>
+	<style>
+h1{
+  color: Grey;
+  font-family: verdana;
+  font-size: 200%;
+
+}
+  body {
+ background-image: url("c2.jpg");
+
+  min-height: 680px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+input[type=date]{
+  
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+ padding: 16px 20px;
+  opacity: 0.9;
+}
+</style>
+  </head>
+<center><br>
+<h1>
+Days Caluculator</h1>
+
+  <body>
+
+  First Date:<input type="date" name="" id="Date1" /><br>
+    Second Date:<input type="date" name="" id="Date2" /><br>
+    <input type="button" class="btn" value="Find Difference" onclick="calculate()" /></br>
+    <p id="result"></p>
+ </center>
+  </body>
+    <script>
+      const calculate = () => {
+        let date1 = new Date(document.getElementById("Date1").value);
+        let date2 = new Date(document.getElementById("Date2").value);
+       try{
+ 
+let noofdates = Math.abs((date2 - date1) / (1000 * 60 * 60 * 24));
+          document.getElementById("result").innerHTML = "Number of days = " +noofdates;
+          
+        } catch(e){
+ document.getElementById("result").innerHTML = e.exception;
+          
+        }
+      };
+    </script>
+  </body>
+</html>
